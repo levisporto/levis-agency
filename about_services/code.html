@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Services &amp; About - Digital Craft</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary-fixed-dim": "#90d792", "on-secondary-container": "#2e7238", "secondary-container": "#abf4ac", "on-primary-fixed": "#002204", "primary-fixed-dim": "#88d982", "tertiary-container": "#59745c", "surface": "#f0fdf1", "surface-container": "#e4f1e5", "primary-fixed": "#a3f69c", "on-error": "#ffffff", "on-error-container": "#93000a", "on-tertiary-fixed": "#07200e", "primary-container": "#2e7d32", "tertiary-fixed": "#cceacd", "on-tertiary-fixed-variant": "#334d37", "on-primary": "#ffffff", "surface-variant": "#d9e6da", "tertiary-fixed-dim": "#b1ceb2", "on-primary-container": "#cbffc2", "surface-container-high": "#dfece0", "secondary": "#286b33", "tertiary": "#415b45", "inverse-primary": "#88d982", "on-tertiary-container": "#daf9db", "primary": "#0d631b", "secondary-fixed": "#abf4ac", "on-surface-variant": "#40493d", "on-primary-fixed-variant": "#005312", "on-background": "#131e17", "error": "#ba1a1a", "on-secondary-fixed": "#002107", "outline-variant": "#bfcaba", "inverse-on-surface": "#e7f4e8", "surface-container-lowest": "#ffffff", "surface-container-low": "#eaf7eb", "on-surface": "#131e17", "error-container": "#ffdad6", "surface-tint": "#1b6d24", "on-secondary": "#ffffff", "background": "#f0fdf1", "outline": "#707a6c", "surface-container-highest": "#d9e6da", "surface-bright": "#f0fdf1", "on-tertiary": "#ffffff", "on-secondary-fixed-variant": "#07521d", "surface-dim": "#d0ddd2", "inverse-surface": "#28332b"
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                    spacing: { "margin-mobile": "20px", "gutter": "24px", "margin-desktop": "64px", "unit": "8px", "container-max": "1280px" },
+                    fontFamily: {
+                        "headline-xl": ["Libre Caslon Text"], "body-lg": ["Manrope"], "label-md": ["Manrope"], "body-md": ["Manrope"], "headline-lg": ["Libre Caslon Text"], "label-sm": ["Manrope"], "headline-md": ["Libre Caslon Text"], "headline-lg-mobile": ["Libre Caslon Text"]
+                    },
+                    fontSize: {
+                        "headline-xl": ["60px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "1.4", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "400" }]
+                    },
+                    boxShadow: {
+                        'skeuo-convex': '4px 6px 16px rgba(46,125,50,0.06), -4px -4px 12px rgba(255,255,255,0.9), inset 1px 1px 0px rgba(255,255,255,1)',
+                        'skeuo-concave': 'inset 3px 3px 8px rgba(46,125,50,0.05), inset -3px -3px 8px rgba(255,255,255,0.8)',
+                        'skeuo-glow': '0 0 24px rgba(46,125,50,0.15), 4px 6px 16px rgba(46,125,50,0.08), -4px -4px 12px rgba(255,255,255,0.9)'
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { cursor: none; }
+        .custom-cursor {
+            width: 40px; height: 40px;
+            background: radial-gradient(circle, rgba(136, 217, 130, 0.4) 0%, rgba(136, 217, 130, 0) 70%);
+            border-radius: 50%;
+            position: fixed; pointer-events: none; z-index: 9999;
+            transform: translate(-50%, -50%); transition: width 0.2s, height 0.2s, background 0.2s;
+            mix-blend-mode: multiply;
+        }
+        .interactive-hover:hover ~ .custom-cursor, *:hover > .custom-cursor {
+            width: 60px; height: 60px;
+            background: radial-gradient(circle, rgba(46, 125, 50, 0.3) 0%, rgba(46, 125, 50, 0) 70%);
+        }
+        
+        /* Glassmorphism utility */
+        .glass-panel {
+            background: rgba(240, 253, 241, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+<div class="custom-cursor" id="cursor"></div>
+<header class="w-full sticky top-0 z-50 backdrop-blur-xl bg-surface/80 dark:bg-surface-dim/80 border-b border-white/20 dark:border-primary/10 shadow-[0_1px_0_0_rgba(255,255,255,0.4)_inset] shadow-[0_4px_30px_rgba(46,125,50,0.1)]">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<a class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim hover:opacity-80 transition-opacity" href="#">Digital Craft</a>
+<nav class="hidden md:flex gap-8 items-center font-label-md text-label-md">
+<a class="text-on-surface-variant dark:text-on-surface-variant/80 hover:text-primary transition-colors hover:glow-primary hover:scale-[1.02]" href="#">Portfolio</a>
+<a class="text-primary dark:text-primary-fixed-dim font-bold border-b-2 border-primary hover:glow-primary hover:scale-[1.02] transition-all" href="#">Services</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant/80 hover:text-primary transition-colors hover:glow-primary hover:scale-[1.02]" href="#">Process</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant/80 hover:text-primary transition-colors hover:glow-primary hover:scale-[1.02]" href="#">About</a>
+</nav>
+<button class="hidden md:flex items-center justify-center px-6 py-2.5 rounded-full bg-primary text-on-primary font-label-md text-label-md shadow-skeuo-convex hover:shadow-skeuo-glow hover:-translate-y-0.5 active:shadow-skeuo-concave active:translate-y-0 transition-all duration-300">
+                Let's Talk
+            </button>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-24">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-gutter items-start">
+<!-- Left Column: Bio & Photo -->
+<section class="lg:col-span-5 space-y-8 lg:sticky lg:top-32">
+<div class="relative group rounded-[2rem] p-3 bg-surface-container shadow-skeuo-convex transition-all duration-500 hover:shadow-skeuo-glow">
+<div class="overflow-hidden rounded-[1.5rem] relative aspect-[4/5] bg-surface-variant/30">
+<img alt="Professional bio portrait" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter contrast-[0.95] brightness-[1.05]" data-alt="A soft-focus, professional portrait of a creative designer sitting in a well-lit, modern studio. The lighting is natural and bright, enhancing the light mode aesthetic of the surrounding UI. Soft green plants subtly frame the background, tying into the primary color palette. The mood is approachable, confident, and meticulously crafted, reflecting digital craftsmanship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXOOX_zGUuuS8OYd4BlUV1nbffV5-DKZn6aP20WqUIs_5iuOuh8XkOzOEIKvNZy8RxbVWKruTSGNeDjS44W3KL6cI-oh8hXuQsIiqyuLIof-VBaaKGWzAiTvZMsbabifNkApYOWss8GTUfZZzeznjxwcpWH0SV9WrkJCNLgQLeCpSvjpPwBhpOTNUkcTzK34MCWBcrM0419GJ5Hnc3KjKnpECpRKL0DOysSeFkEDGLOvXnrCdmnYBwI25GGv2rzYEJuYY09ieP1Q"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface/60 to-transparent pointer-events-none"></div>
+</div>
+<div class="absolute -bottom-6 -right-6 glass-panel px-6 py-4 rounded-2xl shadow-lg flex items-center gap-3 interactive-hover">
+<span class="relative flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
+</span>
+<span class="font-label-md text-label-md text-on-surface">Available for new projects</span>
+</div>
+</div>
+<div class="space-y-6 pt-4">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">
+                        Crafting digital experiences with <span class="text-primary italic">intention</span>.
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                        I bridge the gap between tangible aesthetics and fluid digital interfaces. My approach focuses on tactile skeuomorphism, ensuring every interaction feels grounded, responsive, and meticulously polished.
+                    </p>
+<div class="flex gap-4">
+<a class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-surface-container shadow-skeuo-convex text-primary hover:shadow-skeuo-glow active:shadow-skeuo-concave transition-all duration-300" href="#">
+<span class="material-symbols-outlined">arrow_downward</span>
+</a>
+<span class="font-label-sm text-label-sm text-outline tracking-widest uppercase self-center pt-1">Scroll to explore services</span>
+</div>
+</div>
+</section>
+<!-- Right Column: Services -->
+<section class="lg:col-span-7 space-y-8 pt-12 lg:pt-0 lg:pl-8">
+<div class="flex items-center gap-4 mb-8">
+<div class="h-[1px] flex-grow bg-gradient-to-r from-transparent via-outline-variant/50 to-transparent"></div>
+<h2 class="font-label-sm text-label-sm text-primary tracking-widest uppercase px-4 py-1.5 rounded-full bg-primary-container/10 border border-primary/20">Core Capabilities</h2>
+<div class="h-[1px] flex-grow bg-gradient-to-r from-transparent via-outline-variant/50 to-transparent"></div>
+</div>
+<div class="grid grid-cols-1 gap-8">
+<!-- Service 1 -->
+<div class="group relative p-8 rounded-[2rem] bg-surface-container border border-white/50 shadow-skeuo-convex hover:shadow-skeuo-glow transition-all duration-500 overflow-hidden interactive-hover">
+<div class="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+<div class="relative z-10 flex flex-col md:flex-row gap-6 items-start">
+<div class="flex-shrink-0 w-16 h-16 rounded-2xl bg-surface-variant shadow-skeuo-concave flex items-center justify-center text-primary group-hover:text-primary-container transition-colors duration-300">
+<span class="material-symbols-outlined text-[32px] group-hover:scale-110 transition-transform duration-300" style="font-variation-settings: 'FILL' 1;">web</span>
+</div>
+<div class="space-y-4">
+<h3 class="font-headline-md text-headline-md text-on-surface">Web Design</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                    Translating brand identity into responsive, performant websites. I build digital spaces that feel as substantial and refined as a physical portfolio piece, using subtle depth and organic motion.
+                                </p>
+<ul class="flex flex-wrap gap-2 pt-2">
+<li class="px-3 py-1.5 rounded-full bg-surface-variant/50 text-on-surface-variant font-label-sm text-label-sm border border-white/30 shadow-sm">Framer</li>
+<li class="px-3 py-1.5 rounded-full bg-surface-variant/50 text-on-surface-variant font-label-sm text-label-sm border border-white/30 shadow-sm">Webflow</li>
+<li class="px-3 py-1.5 rounded-full bg-surface-variant/50 text-on-surface-variant font-label-sm text-label-sm border border-white/30 shadow-sm">React</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Service 2 -->
+<div class="group relative p-8 rounded-[2rem] bg-surface-container border border-white/50 shadow-skeuo-convex hover:shadow-skeuo-glow transition-all duration-500 overflow-hidden interactive-hover">
+<div class="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+<div class="relative z-10 flex flex-col md:flex-row gap-6 items-start">
+<div class="flex-shrink-0 w-16 h-16 rounded-2xl bg-surface-variant shadow-skeuo-concave flex items-center justify-center text-primary group-hover:text-primary-container transition-colors duration-300">
+<span class="material-symbols-outlined text-[32px] group-hover:scale-110 transition-transform duration-300" style="font-variation-settings: 'FILL' 1;">branding_watermark</span>
+</div>
+<div class="space-y-4">
+<h3 class="font-headline-md text-headline-md text-on-surface">Brand Identity</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                    Developing cohesive visual systems rooted in intention. From typography selection to color theory, establishing a strong foundation that communicates professional confidence and creative warmth.
+                                </p>
+<ul class="flex flex-wrap gap-2 pt-2">
+<li class="px-3 py-1.5 rounded-full bg-surface-variant/50 text-on-surface-variant font-label-sm text-label-sm border border-white/30 shadow-sm">Logo Design</li>
+<li class="px-3 py-1.5 rounded-full bg-surface-variant/50 text-on-surface-variant font-label-sm text-label-sm border border-white/30 shadow-sm">Visual Systems</li>
+<li class="px-3 py-1.5 rounded-full bg-surface-variant/50 text-on-surface-variant font-label-sm text-label-sm border border-white/30 shadow-sm">Guidelines</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Service 3 -->
+<div class="group relative p-8 rounded-[2rem] bg-surface-container border border-white/50 shadow-skeuo-convex hover:shadow-skeuo-glow transition-all duration-500 overflow-hidden interactive-hover">
+<div class="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+<div class="relative z-10 flex flex-col md:flex-row gap-6 items-start">
+<div class="flex-shrink-0 w-16 h-16 rounded-2xl bg-surface-variant shadow-skeuo-concave flex items-center justify-center text-primary group-hover:text-primary-container transition-colors duration-300">
+<span class="material-symbols-outlined text-[32px] group-hover:scale-110 transition-transform duration-300" style="font-variation-settings: 'FILL' 1;">touch_app</span>
+</div>
+<div class="space-y-4">
+<h3 class="font-headline-md text-headline-md text-on-surface">UI/UX Design</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                    Crafting intuitive interfaces that feel rewarding to use. Emphasizing clear hierarchy, squishy interactive states, and a fluid grid logic to guide users effortlessly through complex journeys.
+                                </p>
+<ul class="flex flex-wrap gap-2 pt-2">
+<li class="px-3 py-1.5 rounded-full bg-surface-variant/50 text-on-surface-variant font-label-sm text-label-sm border border-white/30 shadow-sm">Wireframing</li>
+<li class="px-3 py-1.5 rounded-full bg-surface-variant/50 text-on-surface-variant font-label-sm text-label-sm border border-white/30 shadow-sm">Prototyping</li>
+<li class="px-3 py-1.5 rounded-full bg-surface-variant/50 text-on-surface-variant font-label-sm text-label-sm border border-white/30 shadow-sm">Design Systems</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<footer class="w-full py-12 px-margin-mobile md:px-margin-desktop bg-surface-container-low dark:bg-surface-container-lowest border-t border-outline-variant/30 inner-shadow-sm">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter items-center max-w-container-max mx-auto">
+<div class="flex flex-col space-y-4">
+<span class="font-headline-md text-headline-md text-primary">Digital Craft</span>
+<p class="font-body-md text-body-md text-on-surface-variant opacity-80">© 2024 Digital Craftsmanship. Built with intentionality.</p>
+</div>
+<div class="flex flex-wrap gap-6 md:justify-end font-label-md text-label-md">
+<a class="text-on-surface-variant hover:text-secondary hover:text-secondary-fixed-dim transition-colors active:opacity-80" href="#">Instagram</a>
+<a class="text-on-surface-variant hover:text-secondary hover:text-secondary-fixed-dim transition-colors active:opacity-80" href="#">LinkedIn</a>
+<a class="text-on-surface-variant hover:text-secondary hover:text-secondary-fixed-dim transition-colors active:opacity-80" href="#">Dribbble</a>
+<a class="text-on-surface-variant hover:text-secondary hover:text-secondary-fixed-dim transition-colors active:opacity-80" href="#">Email</a>
+</div>
+</div>
+</footer>
+<script>
+        // Custom Cursor Logic
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        // Hide cursor when leaving window
+        document.addEventListener('mouseleave', () => {
+            cursor.style.opacity = '0';
+        });
+        document.addEventListener('mouseenter', () => {
+            cursor.style.opacity = '1';
+        });
+    </script>
+</body></html>

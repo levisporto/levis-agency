@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact - Digital Craft</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#90d792",
+                        "on-secondary-container": "#2e7238",
+                        "secondary-container": "#abf4ac",
+                        "on-primary-fixed": "#002204",
+                        "primary-fixed-dim": "#88d982",
+                        "tertiary-container": "#59745c",
+                        "surface": "#f0fdf1",
+                        "surface-container": "#e4f1e5",
+                        "primary-fixed": "#a3f69c",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#07200e",
+                        "primary-container": "#2e7d32",
+                        "tertiary-fixed": "#cceacd",
+                        "on-tertiary-fixed-variant": "#334d37",
+                        "on-primary": "#ffffff",
+                        "surface-variant": "#d9e6da",
+                        "tertiary-fixed-dim": "#b1ceb2",
+                        "on-primary-container": "#cbffc2",
+                        "surface-container-high": "#dfece0",
+                        "secondary": "#286b33",
+                        "tertiary": "#415b45",
+                        "inverse-primary": "#88d982",
+                        "on-tertiary-container": "#daf9db",
+                        "primary": "#0d631b",
+                        "secondary-fixed": "#abf4ac",
+                        "on-surface-variant": "#40493d",
+                        "on-primary-fixed-variant": "#005312",
+                        "on-background": "#131e17",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed": "#002107",
+                        "outline-variant": "#bfcaba",
+                        "inverse-on-surface": "#e7f4e8",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#eaf7eb",
+                        "on-surface": "#131e17",
+                        "error-container": "#ffdad6",
+                        "surface-tint": "#1b6d24",
+                        "on-secondary": "#ffffff",
+                        "background": "#f0fdf1",
+                        "outline": "#707a6c",
+                        "surface-container-highest": "#d9e6da",
+                        "surface-bright": "#f0fdf1",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#07521d",
+                        "surface-dim": "#d0ddd2",
+                        "inverse-surface": "#28332b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "unit": "8px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Libre Caslon Text"],
+                        "body-lg": ["Manrope"],
+                        "label-md": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "headline-lg": ["Libre Caslon Text"],
+                        "label-sm": ["Manrope"],
+                        "headline-md": ["Libre Caslon Text"],
+                        "headline-lg-mobile": ["Libre Caslon Text"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["60px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "1.4", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Tactile Skeuomorphism Custom Utilities */
+        .shadow-convex {
+            box-shadow: 8px 8px 24px rgba(13, 99, 27, 0.08), -8px -8px 24px rgba(255, 255, 255, 0.9);
+        }
+        .shadow-concave {
+            box-shadow: inset 4px 4px 8px rgba(13, 99, 27, 0.05), inset -4px -4px 8px rgba(255, 255, 255, 0.8);
+        }
+        .hover-glow-btn:hover {
+            box-shadow: 0 0 20px rgba(40, 107, 51, 0.4), 4px 4px 12px rgba(13, 99, 27, 0.1);
+        }
+        
+        /* Custom Cursor */
+        #custom-cursor {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 32px;
+            height: 32px;
+            background-color: rgba(144, 215, 146, 0.3); /* secondary-fixed-dim with opacity */
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: width 0.2s, height 0.2s, background-color 0.2s, backdrop-filter 0.2s;
+            backdrop-filter: blur(2px);
+        }
+        #custom-cursor.active {
+            width: 64px;
+            height: 64px;
+            background-color: rgba(144, 215, 146, 0.15);
+            backdrop-filter: blur(4px);
+        }
+
+        /* Hide default cursor on larger screens */
+        @media (min-width: 768px) {
+            body { cursor: none; }
+            a, button, input, textarea { cursor: none; }
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md text-body-md antialiased overflow-x-hidden selection:bg-secondary-container selection:text-on-secondary-container">
+<div class="hidden md:block" id="custom-cursor"></div>
+<!-- TopNavBar Shared Component -->
+<nav class="w-full sticky top-0 z-50 backdrop-blur-xl bg-surface/80 dark:bg-surface-dim/80 border-b border-white/20 dark:border-primary/10 shadow-[0_1px_0_0_rgba(255,255,255,0.4)_inset] shadow-[0_4px_30px_rgba(46,125,50,0.1)]">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim">
+                Digital Craft
+            </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant/80 hover:text-primary transition-colors hover:glow-primary hover:scale-[1.02]" href="#">Portfolio</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant/80 hover:text-primary transition-colors hover:glow-primary hover:scale-[1.02]" href="#">Services</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant/80 hover:text-primary transition-colors hover:glow-primary hover:scale-[1.02]" href="#">Process</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-on-surface-variant/80 hover:text-primary transition-colors hover:glow-primary hover:scale-[1.02]" href="#">About</a>
+</div>
+<button class="font-label-md text-label-md bg-primary text-on-primary px-6 py-2 rounded-full shadow-md hover:scale-[1.02] active:scale-95 transition-all">
+                Let's Talk
+            </button>
+</div>
+</nav>
+<!-- Main Content Canvas: Textured Green Surface Environment -->
+<main class="relative min-h-screen py-16 md:py-32 px-margin-mobile md:px-margin-desktop bg-surface-container overflow-hidden">
+<!-- Decorative Ambient Light -->
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-secondary-container/20 rounded-full blur-[120px] pointer-events-none"></div>
+<div class="max-w-container-max mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<!-- Left Header Area -->
+<div class="lg:col-span-5 flex flex-col gap-6 mb-12 lg:mb-0">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-xl md:text-headline-xl text-primary drop-shadow-sm">
+                    Start a Conversation.
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">
+                    We approach every project with intentionality and craft. Share your vision with us, and let's explore how we can bring it into the physical and digital world.
+                </p>
+<div class="mt-8 flex flex-col gap-4">
+<div class="flex items-center gap-4 text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<span class="font-label-md text-label-md">124 Craftsmanship Way, Suite 100<br/>Portland, OR 97204</span>
+</div>
+<div class="flex items-center gap-4 text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">mail</span>
+<span class="font-label-md text-label-md">hello@digitalcraft.studio</span>
+</div>
+</div>
+</div>
+<!-- Right Form Area (The Physical Letter) -->
+<div class="lg:col-span-7">
+<div class="bg-surface-container-lowest rounded-xl p-8 md:p-12 shadow-convex relative border border-white/40">
+<!-- Subtle paper texture grain overlay -->
+<div class="absolute inset-0 opacity-[0.03] pointer-events-none rounded-xl" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E');"></div>
+<form class="flex flex-col gap-6 relative z-10">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Name Input -->
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface-variant ml-1" for="name">Full Name</label>
+<input class="bg-surface border-none rounded-lg py-3 px-4 shadow-concave font-body-md text-body-md text-on-surface placeholder:text-outline focus:ring-2 focus:ring-secondary/50 focus:outline-none transition-shadow interactive-el" id="name" name="name" placeholder="Jane Doe" type="text"/>
+</div>
+<!-- Email Input -->
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface-variant ml-1" for="email">Email Address</label>
+<input class="bg-surface border-none rounded-lg py-3 px-4 shadow-concave font-body-md text-body-md text-on-surface placeholder:text-outline focus:ring-2 focus:ring-secondary/50 focus:outline-none transition-shadow interactive-el" id="email" name="email" placeholder="jane@example.com" type="email"/>
+</div>
+</div>
+<!-- Subject Select (Tactile Dropdown vibe) -->
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface-variant ml-1" for="subject">Subject of Inquiry</label>
+<div class="relative">
+<select class="w-full appearance-none bg-surface border-none rounded-lg py-3 px-4 shadow-concave font-body-md text-body-md text-on-surface focus:ring-2 focus:ring-secondary/50 focus:outline-none transition-shadow interactive-el" id="subject" name="subject">
+<option>Project Inquiry</option>
+<option>Consulting</option>
+<option>Press &amp; Media</option>
+<option>Other</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-outline">expand_more</span>
+</div>
+</div>
+<!-- Message Textarea -->
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface-variant ml-1" for="message">Your Message</label>
+<textarea class="bg-surface border-none rounded-lg py-3 px-4 shadow-concave font-body-md text-body-md text-on-surface placeholder:text-outline focus:ring-2 focus:ring-secondary/50 focus:outline-none transition-shadow resize-none interactive-el" id="message" name="message" placeholder="Tell us about your project..." rows="5"></textarea>
+</div>
+<!-- Submit Button -->
+<div class="pt-4 flex justify-end">
+<button class="flex items-center gap-2 bg-primary text-on-primary px-8 py-4 rounded-full font-label-md text-label-md transition-all duration-300 hover-glow-btn active:shadow-concave active:scale-95 interactive-el" type="submit">
+<span>Send Message</span>
+<span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Shared Component -->
+<footer class="bg-surface-container-low dark:bg-surface-container-lowest w-full py-12 px-margin-mobile md:px-margin-desktop border-t border-outline-variant/30 shadow-[inset_0_2px_4px_rgba(0,0,0,0.02)]">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter items-center max-w-container-max mx-auto">
+<div class="flex flex-col gap-4">
+<div class="font-headline-md text-headline-md text-primary">
+                    Digital Craft
+                </div>
+<div class="font-body-md text-body-md text-on-surface-variant">
+                    © 2024 Digital Craftsmanship. Built with intentionality.
+                </div>
+</div>
+<div class="flex flex-wrap gap-6 md:justify-end">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:text-secondary-fixed-dim transition-colors interactive-el" href="#">Instagram</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:text-secondary-fixed-dim transition-colors interactive-el" href="#">LinkedIn</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:text-secondary-fixed-dim transition-colors interactive-el" href="#">Dribbble</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary hover:text-secondary-fixed-dim transition-colors interactive-el" href="#">Email</a>
+</div>
+</div>
+</footer>
+<!-- Custom Cursor Logic -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cursor = document.getElementById('custom-cursor');
+            const interactables = document.querySelectorAll('a, button, input, textarea, select, .interactive-el');
+
+            // Only run on non-touch devices
+            if (window.matchMedia("(pointer: fine)").matches) {
+                document.addEventListener('mousemove', (e) => {
+                    cursor.style.left = e.clientX + 'px';
+                    cursor.style.top = e.clientY + 'px';
+                });
+
+                interactables.forEach(el => {
+                    el.addEventListener('mouseenter', () => {
+                        cursor.classList.add('active');
+                    });
+                    el.addEventListener('mouseleave', () => {
+                        cursor.classList.remove('active');
+                    });
+                });
+            }
+        });
+    </script>
+</body></html>

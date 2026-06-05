@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Digital Craft - Web Designer Portfolio</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+                "secondary-fixed-dim": "#90d792",
+                "on-secondary-container": "#2e7238",
+                "secondary-container": "#abf4ac",
+                "on-primary-fixed": "#002204",
+                "primary-fixed-dim": "#88d982",
+                "tertiary-container": "#59745c",
+                "surface": "#f0fdf1",
+                "surface-container": "#e4f1e5",
+                "primary-fixed": "#a3f69c",
+                "on-error": "#ffffff",
+                "on-error-container": "#93000a",
+                "on-tertiary-fixed": "#07200e",
+                "primary-container": "#2e7d32",
+                "tertiary-fixed": "#cceacd",
+                "on-tertiary-fixed-variant": "#334d37",
+                "on-primary": "#ffffff",
+                "surface-variant": "#d9e6da",
+                "tertiary-fixed-dim": "#b1ceb2",
+                "on-primary-container": "#cbffc2",
+                "surface-container-high": "#dfece0",
+                "secondary": "#286b33",
+                "tertiary": "#415b45",
+                "inverse-primary": "#88d982",
+                "on-tertiary-container": "#daf9db",
+                "primary": "#0d631b",
+                "secondary-fixed": "#abf4ac",
+                "on-surface-variant": "#40493d",
+                "on-primary-fixed-variant": "#005312",
+                "on-background": "#131e17",
+                "error": "#ba1a1a",
+                "on-secondary-fixed": "#002107",
+                "outline-variant": "#bfcaba",
+                "inverse-on-surface": "#e7f4e8",
+                "surface-container-lowest": "#ffffff",
+                "surface-container-low": "#eaf7eb",
+                "on-surface": "#131e17",
+                "error-container": "#ffdad6",
+                "surface-tint": "#1b6d24",
+                "on-secondary": "#ffffff",
+                "background": "#f0fdf1",
+                "outline": "#707a6c",
+                "surface-container-highest": "#d9e6da",
+                "surface-bright": "#f0fdf1",
+                "on-tertiary": "#ffffff",
+                "on-secondary-fixed-variant": "#07521d",
+                "surface-dim": "#d0ddd2",
+                "inverse-surface": "#28332b"
+            },
+            borderRadius: {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            spacing: {
+                "margin-mobile": "20px",
+                "gutter": "24px",
+                "margin-desktop": "64px",
+                "unit": "8px",
+                "container-max": "1280px"
+            },
+            fontFamily: {
+                "headline-xl": ["Libre Caslon Text"],
+                "body-lg": ["Manrope"],
+                "label-md": ["Manrope"],
+                "body-md": ["Manrope"],
+                "headline-lg": ["Libre Caslon Text"],
+                "label-sm": ["Manrope"],
+                "headline-md": ["Libre Caslon Text"],
+                "headline-lg-mobile": ["Libre Caslon Text"]
+            },
+            fontSize: {
+                "headline-xl": ["60px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "400" }],
+                "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+                "label-md": ["14px", { lineHeight: "1.4", letterSpacing: "0.05em", fontWeight: "600" }],
+                "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+                "headline-lg": ["48px", { lineHeight: "1.2", fontWeight: "400" }],
+                "label-sm": ["12px", { lineHeight: "1.4", letterSpacing: "0.1em", fontWeight: "700" }],
+                "headline-md": ["32px", { lineHeight: "1.3", fontWeight: "400" }],
+                "headline-lg-mobile": ["32px", { lineHeight: "1.2", fontWeight: "400" }]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        /* Custom Skeuomorphic & Glass Utilities mapped to theme where possible */
+        .glass-panel {
+            background-color: rgba(240, 253, 241, 0.6); /* surface with opacity */
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-bottom-color: rgba(40, 107, 51, 0.1); /* secondary tint */
+            border-right-color: rgba(40, 107, 51, 0.1);
+            box-shadow: 0 8px 32px rgba(13, 99, 27, 0.05); /* primary subtle */
+        }
+        
+        .skeuo-button {
+            background: linear-gradient(135deg, #f0fdf1 0%, #e4f1e5 100%);
+            box-shadow: -4px -4px 10px rgba(255,255,255,0.8), 4px 4px 10px rgba(13, 99, 27, 0.1);
+            border: 1px solid rgba(255,255,255,0.6);
+            transition: all 0.2s ease;
+        }
+        
+        .skeuo-button:hover {
+            box-shadow: -2px -2px 5px rgba(255,255,255,0.8), 2px 2px 5px rgba(13, 99, 27, 0.1), 0 0 15px rgba(144, 215, 146, 0.4);
+        }
+        
+        .skeuo-button:active {
+            box-shadow: inset 4px 4px 10px rgba(13, 99, 27, 0.1), inset -4px -4px 10px rgba(255,255,255,0.8);
+            background: #e4f1e5;
+        }
+
+        .skeuo-card {
+            background: #f0fdf1;
+            box-shadow: -8px -8px 20px rgba(255,255,255,0.9), 8px 8px 20px rgba(13, 99, 27, 0.08);
+            border: 1px solid rgba(255,255,255,0.5);
+        }
+        
+        .texture-overlay {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        /* Custom Cursor */
+        #custom-cursor {
+            width: 40px;
+            height: 40px;
+            background: rgba(144, 215, 146, 0.3); /* secondary-fixed-dim */
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s, height 0.3s, background 0.3s;
+            mix-blend-mode: multiply;
+        }
+        body:hover #custom-cursor { opacity: 1; }
+        .hover-target:hover ~ #custom-cursor,
+        a:hover ~ #custom-cursor,
+        button:hover ~ #custom-cursor {
+            width: 60px;
+            height: 60px;
+            background: rgba(144, 215, 146, 0.5);
+            filter: blur(4px);
+        }
+        
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased relative overflow-x-hidden selection:bg-secondary-container selection:text-on-secondary-container">
+<div class="hidden md:block" id="custom-cursor"></div>
+<div class="fixed inset-0 texture-overlay z-0"></div>
+<!-- TopNavBar Shared Component -->
+<nav class="w-full sticky top-0 z-50 backdrop-blur-xl bg-surface/80 border-b border-white/20 shadow-[0_1px_0_0_rgba(255,255,255,0.4)_inset] shadow-[0_4px_30px_rgba(46,125,50,0.1)]">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<a class="font-headline-md text-headline-md text-primary hover:glow-primary hover:scale-[1.02] transition-all" href="#">Digital Craft</a>
+<!-- Desktop Nav -->
+<ul class="hidden md:flex items-center gap-gutter">
+<li><a class="text-primary font-bold border-b-2 border-primary pb-1" href="#portfolio">Portfolio</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors pb-1" href="#services">Services</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors pb-1" href="#process">Process</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors pb-1" href="#about">About</a></li>
+</ul>
+<!-- CTA -->
+<a class="hidden md:flex skeuo-button px-6 py-2 rounded-full text-primary font-label-md text-label-md items-center gap-2 hover:scale-[1.02] transition-all" href="#contact">
+                Let's Talk
+            </a>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-primary p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<main class="relative z-10">
+<!-- Hero Section -->
+<section class="min-h-[870px] flex items-center justify-center px-margin-mobile md:px-margin-desktop py-20 relative overflow-hidden">
+<!-- Decorative ambient glow -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-secondary-fixed-dim/20 rounded-full blur-[100px] -z-10"></div>
+<div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<div class="lg:col-span-7 flex flex-col gap-6 relative z-10">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Digital Craftsmanship</span>
+<h1 class="font-headline-lg-mobile md:font-headline-xl text-headline-lg-mobile md:text-headline-xl text-on-surface leading-tight">
+                        Tactile design for <br/>
+<span class="text-primary italic">digital ecosystems.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                        I build interfaces that feel real. By merging skeuomorphic depth with modern glassmorphism, I create professional, warm, and highly engaging web experiences for high-end clients.
+                    </p>
+<div class="pt-4 flex gap-4 items-center">
+<a class="skeuo-button px-8 py-4 rounded-xl text-primary font-label-md text-label-md flex items-center gap-2 group" href="#portfolio">
+                            Explore Work
+                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="lg:col-span-5 relative mt-12 lg:mt-0 perspective-1000">
+<!-- Glass Tactile Card -->
+<div class="glass-panel rounded-2xl p-8 transform rotate-y-[-10deg] rotate-x-[5deg] shadow-2xl relative overflow-hidden group">
+<!-- Shimmer effect -->
+<div class="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/40 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-in-out"></div>
+<div class="aspect-square bg-surface-container-high rounded-xl overflow-hidden relative skeuo-card mb-6">
+<img class="w-full h-full object-cover mix-blend-multiply opacity-80" data-alt="A highly detailed, abstract digital artwork featuring soft, organic 3D shapes resembling frosted glass and matte ceramics. The shapes are gently illuminated by a soft, verdant green light against a pristine, light-mode background. The composition feels tactile, calm, and professionally crafted, emphasizing depth and subtle shadows in a modern skeuomorphic style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYlEQJq2lP4T31eAhz_a4AH6tcXW01clmYmhZY5OvgQIc4HjJWzbieQw42BNvzxcdlft9d4Q46kHEhKz0kf01bosoo2AqgHNiBoUH3z09rygHXXEBwNfEoyy0nfO3Cb1Pu4-uUxCsVC_hVGqLbGq_bbg9wdAmVWOQnmFPmeTkMzwjopImYpKy-nj5NQW3z1oQHYATJz2QJBAivzodjh7uOPfVNH4tVCO_3ofoBAWGkN4W-9k6OV6zrBZO4GRybSgsE3ZuGcPfVjg"/>
+</div>
+<div class="flex justify-between items-end">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">Aura Platform</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">UI/UX &amp; Engineering</p>
+</div>
+<button class="w-12 h-12 rounded-full skeuo-button flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-weight="fill">north_east</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Selected Work (Bento Grid) -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop relative" id="portfolio">
+<div class="max-w-container-max mx-auto">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Selected Work</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Curated projects showcasing intentional design.</p>
+</div>
+<a class="hidden md:flex font-label-md text-label-md text-primary hover:text-secondary-fixed-dim transition-colors items-center gap-1" href="#">
+                        View Archive <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter auto-rows-[300px] md:auto-rows-[400px]">
+<!-- Bento Item 1 -->
+<div class="md:col-span-2 glass-panel rounded-2xl overflow-hidden group relative flex flex-col justify-end p-8 skeuo-card">
+<img class="absolute inset-0 w-full h-full object-cover z-0 opacity-40 group-hover:opacity-60 transition-opacity duration-500" data-alt="A sophisticated digital dashboard interface displayed on a high-resolution screen, angled slightly to show depth. The UI features soft green accent colors, rounded tactile cards, and clear typography over a light surface. The lighting is bright and studio-like, highlighting the clean, structural layout of the data visualization components in a modern, skeuomorphic aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3rRnYrv2-BiB-vHcKYIhiwbpqD-cosq_6ckBEyO8DGu1M5p6aQh6GSSzYAgXBc4GcR0seXVI5IJTLi7CX26Nqeh6POz_XNQMY7eZHw6igVMAsFXBIZNRC34YGiiWZYjffOQXevf4duWz_7Ru8nYuRHryd6ZDbkyRIVQgsC84mIf-n09c6mycqtqahLYGKzkHymVMTCN8EImedNrMlnOZuOzyyuuwiQLs4EKWX98_PgweMO2jbOd61IA-iay-sW-EiTCK59eK8TA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/50 to-transparent z-10"></div>
+<div class="relative z-20 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+<span class="inline-block px-3 py-1 bg-secondary-container/80 backdrop-blur-md text-on-secondary-container font-label-sm text-label-sm rounded-full mb-3 border border-white/40">Fintech</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Verdant Banking App</h3>
+</div>
+</div>
+<!-- Bento Item 2 -->
+<div class="glass-panel rounded-2xl overflow-hidden group relative flex flex-col justify-end p-8 skeuo-card">
+<img class="absolute inset-0 w-full h-full object-cover z-0 opacity-40 group-hover:opacity-60 transition-opacity duration-500" data-alt="A close-up view of a minimalist architectural interior featuring smooth, matte plaster walls and soft, natural daylight filtering through. A subtle hint of indoor greenery is visible in the corner. The scene evokes a sense of calm, structural solidness, and refined physical craftsmanship, perfectly aligning with a light-mode, organic design system." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_kgTQqGHqNMjEOyDEoqxg3aQr923OnItt-EjkIc10a7-NB5Y2zmqXGjlGXtfxGUNJkRIfsi2ZXxGTRkgq1DVKwUKmDjA9jftMas92IPr4S5eNvMLPzxYHsVfohT7JIewLuCHKCI-IFw9CdXTFyWgVJbPoJrmf2t4MjU8C2ii3hTpFP8Ths9HNzZc_9htQTciO2Ncf1T22pdUl8xWQyRPkefMQt2MYLXHMTeOeyxoqHEBBymjC554G3ufyaLNDVxRoRQjnmXM2tw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/50 to-transparent z-10"></div>
+<div class="relative z-20 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+<span class="inline-block px-3 py-1 bg-secondary-container/80 backdrop-blur-md text-on-secondary-container font-label-sm text-label-sm rounded-full mb-3 border border-white/40">E-Commerce</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Botanica</h3>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop bg-surface-container-low/50 border-y border-outline-variant/20" id="services">
+<div class="max-w-container-max mx-auto">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-16 text-center">Disciplines</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Service Card 1 -->
+<div class="skeuo-card rounded-2xl p-8 flex flex-col items-start gap-6 hover:-translate-y-2 transition-transform duration-300">
+<div class="w-14 h-14 rounded-full skeuo-button flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[28px]" data-weight="fill">design_services</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">UI/UX Design</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Crafting intuitive, tactile interfaces that prioritize user logic while delivering a premium visual experience.</p>
+</div>
+</div>
+<!-- Service Card 2 -->
+<div class="skeuo-card rounded-2xl p-8 flex flex-col items-start gap-6 hover:-translate-y-2 transition-transform duration-300">
+<div class="w-14 h-14 rounded-full skeuo-button flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[28px]" data-weight="fill">code</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">Web Development</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Translating high-fidelity designs into performant, responsive code using modern frameworks and refined CSS.</p>
+</div>
+</div>
+<!-- Service Card 3 -->
+<div class="skeuo-card rounded-2xl p-8 flex flex-col items-start gap-6 hover:-translate-y-2 transition-transform duration-300">
+<div class="w-14 h-14 rounded-full skeuo-button flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[28px]" data-weight="fill">view_in_ar</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">Interaction Design</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Implementing subtle micro-interactions and smooth transitions that give digital spaces a sense of physical reality.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Shared Component -->
+<footer class="bg-surface-container-low w-full py-12 px-margin-mobile md:px-margin-desktop border-t border-outline-variant/30 inner-shadow-sm mt-24">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter items-center max-w-container-max mx-auto">
+<div class="flex flex-col gap-4 items-start">
+<span class="font-headline-md text-headline-md text-primary">Digital Craft</span>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                    © 2024 Digital Craftsmanship. Built with intentionality.
+                </p>
+</div>
+<div class="flex flex-wrap gap-6 md:justify-end">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary-fixed-dim transition-colors" href="#">Instagram</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary-fixed-dim transition-colors" href="#">LinkedIn</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary-fixed-dim transition-colors" href="#">Dribbble</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary-fixed-dim transition-colors" href="#">Email</a>
+</div>
+</div>
+</footer>
+<!-- Simple Custom Cursor Logic -->
+<script>
+        const cursor = document.getElementById('custom-cursor');
+        
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        // Hide cursor when leaving window
+        document.addEventListener('mouseleave', () => {
+            cursor.style.display = 'none';
+        });
+        document.addEventListener('mouseenter', () => {
+            cursor.style.display = 'block';
+        });
+    </script>
+</body></html>

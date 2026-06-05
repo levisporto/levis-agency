@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Portfolio - Digital Craft</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary-fixed-dim": "#90d792",
+                        "on-secondary-container": "#2e7238",
+                        "secondary-container": "#abf4ac",
+                        "on-primary-fixed": "#002204",
+                        "primary-fixed-dim": "#88d982",
+                        "tertiary-container": "#59745c",
+                        "surface": "#f0fdf1",
+                        "surface-container": "#e4f1e5",
+                        "primary-fixed": "#a3f69c",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#07200e",
+                        "primary-container": "#2e7d32",
+                        "tertiary-fixed": "#cceacd",
+                        "on-tertiary-fixed-variant": "#334d37",
+                        "on-primary": "#ffffff",
+                        "surface-variant": "#d9e6da",
+                        "tertiary-fixed-dim": "#b1ceb2",
+                        "on-primary-container": "#cbffc2",
+                        "surface-container-high": "#dfece0",
+                        "secondary": "#286b33",
+                        "tertiary": "#415b45",
+                        "inverse-primary": "#88d982",
+                        "on-tertiary-container": "#daf9db",
+                        "primary": "#0d631b",
+                        "secondary-fixed": "#abf4ac",
+                        "on-surface-variant": "#40493d",
+                        "on-primary-fixed-variant": "#005312",
+                        "on-background": "#131e17",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed": "#002107",
+                        "outline-variant": "#bfcaba",
+                        "inverse-on-surface": "#e7f4e8",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#eaf7eb",
+                        "on-surface": "#131e17",
+                        "error-container": "#ffdad6",
+                        "surface-tint": "#1b6d24",
+                        "on-secondary": "#ffffff",
+                        "background": "#f0fdf1",
+                        "outline": "#707a6c",
+                        "surface-container-highest": "#d9e6da",
+                        "surface-bright": "#f0fdf1",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#07521d",
+                        "surface-dim": "#d0ddd2",
+                        "inverse-surface": "#28332b"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "unit": "8px",
+                        "container-max": "1280px"
+                    },
+                    fontFamily: {
+                        "headline-xl": ["Libre Caslon Text"],
+                        "body-lg": ["Manrope"],
+                        "label-md": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "headline-lg": ["Libre Caslon Text"],
+                        "label-sm": ["Manrope"],
+                        "headline-md": ["Libre Caslon Text"],
+                        "headline-lg-mobile": ["Libre Caslon Text"]
+                    },
+                    fontSize: {
+                        "headline-xl": ["60px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "1.4", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Custom Skeuomorphic & Glassmorphic Utilities */
+        .glass-panel {
+            background: rgba(240, 253, 241, 0.6); /* surface with opacity */
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        
+        .skeuo-convex {
+            box-shadow: 
+                8px 8px 24px rgba(13, 99, 27, 0.06), /* primary shadow */
+                -8px -8px 24px rgba(255, 255, 255, 0.9); /* light highlight */
+        }
+
+        .skeuo-convex-hover:hover {
+            box-shadow: 
+                4px 4px 12px rgba(13, 99, 27, 0.08), 
+                -4px -4px 12px rgba(255, 255, 255, 0.9),
+                0 0 20px rgba(40, 107, 51, 0.15); /* soft green glow */
+            transform: scale(0.99) translateY(2px);
+        }
+
+        .skeuo-inset {
+            box-shadow: 
+                inset 4px 4px 8px rgba(13, 99, 27, 0.08),
+                inset -4px -4px 8px rgba(255, 255, 255, 0.9);
+        }
+
+        .text-glow {
+            text-shadow: 0 0 12px rgba(13, 99, 27, 0.2);
+        }
+
+        /* Custom Cursor styling */
+        #custom-cursor {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 32px;
+            height: 32px;
+            background-color: rgba(144, 215, 146, 0.3); /* secondary-fixed-dim */
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: width 0.2s, height 0.2s, background-color 0.2s;
+            mix-blend-mode: multiply;
+        }
+        body:hover #custom-cursor {
+            opacity: 1;
+        }
+        .interactive-hover:hover ~ #custom-cursor,
+        a:hover ~ #custom-cursor,
+        button:hover ~ #custom-cursor {
+            width: 64px;
+            height: 64px;
+            background-color: rgba(144, 215, 146, 0.15);
+            backdrop-filter: blur(4px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased selection:bg-secondary-container selection:text-on-secondary-container min-h-screen flex flex-col relative overflow-x-hidden">
+<!-- Custom Cursor Element -->
+<div class="hidden md:block" id="custom-cursor"></div>
+<!-- TopNavBar -->
+<nav class="w-full sticky top-0 z-50 backdrop-blur-xl bg-surface/80 border-b border-primary/10 shadow-[0_1px_0_0_rgba(255,255,255,0.4)_inset] shadow-[0_4px_30px_rgba(46,125,50,0.1)] transition-all">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<!-- Brand Logo -->
+<a class="font-headline-md text-headline-md text-primary hover:glow-primary hover:scale-[1.02] transition-all" href="#">
+                Digital Craft
+            </a>
+<!-- Navigation Links (Desktop) -->
+<ul class="hidden md:flex items-center gap-gutter font-label-md text-label-md">
+<li><a class="text-primary font-bold border-b-2 border-primary pb-1" href="#">Portfolio</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors hover:glow-primary hover:scale-[1.02]" href="#">Services</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors hover:glow-primary hover:scale-[1.02]" href="#">Process</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors hover:glow-primary hover:scale-[1.02]" href="#">About</a></li>
+</ul>
+<!-- Trailing Action -->
+<button class="hidden md:block font-label-md text-label-md text-on-primary bg-primary px-6 py-2.5 rounded-full shadow-[0_4px_12px_rgba(13,99,27,0.3),inset_0_1px_0_rgba(255,255,255,0.3)] hover:bg-secondary transition-colors active:scale-95 duration-150">
+                Let's Talk
+            </button>
+<!-- Mobile Menu Toggle (Simplified placeholder) -->
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu</span>
+</button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow">
+<!-- Hero Section -->
+<header class="pt-24 pb-16 px-margin-mobile md:px-margin-desktop text-center max-w-container-max mx-auto">
+<h1 class="font-headline-xl text-headline-xl text-primary mb-6 text-glow">Tactile Digital Spaces.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                A collection of carefully constructed interfaces that bridge the gap between physical craftsmanship and digital fluidity. Designed with intentionality, depth, and a soft touch.
+            </p>
+</header>
+<!-- Portfolio Grid (Bento Style) -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto pb-32">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter auto-rows-[400px]">
+<!-- Project Card 1 (Large) -->
+<article class="interactive-hover group relative lg:col-span-2 rounded-xl bg-surface-container-low border border-white/60 skeuo-convex skeuo-convex-hover transition-all duration-300 overflow-hidden flex flex-col justify-end p-6 cursor-pointer">
+<div class="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A modern, minimalist architectural interior featuring soft, matte green wall panels and a sculptural frosted glass desk. Natural, high-key lighting filters in, casting soft, layered shadows that emphasize the physical depth and skeuomorphic qualities of the space. The overall aesthetic is calm, highly professional, and grounded in the concept of refined digital craftsmanship." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDf9QGO9MnzcZVRA59pROHDRcRoLCwR-RgxhSYLaDy986l6WUic-qZdRJ4VbNYlGjjwaRLXQF9YYVDGvAOIcAC3lAoSc6DHySTxadKFMUkVRxo7Pj1XGgSwx45UQN1y5NccCfwKxwMyYLiaaCRhyITvxmjjBybIX8xRgSErJrzUyJfWm6SAxUrb2WVcMCP7CvLhNo-0jLER1NV0pMZ6Gf113JLT4VGckvTdLnB8fAThTSAKSd3uwTi7Rq-oN6A21wAV6Hg_0YsKLg');">
+</div>
+<!-- Glassmorphic Content Container -->
+<div class="relative z-10 glass-panel rounded-lg p-6 w-full md:w-2/3 lg:w-1/2">
+<span class="font-label-sm text-label-sm text-primary-container bg-surface/80 px-3 py-1 rounded-full uppercase tracking-wider inline-block mb-3 border border-white/40">Interface Design</span>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-2">Fintech Dashboard</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Reimagining financial data with organic depth and soft interactions.</p>
+</div>
+</article>
+<!-- Project Card 2 -->
+<article class="interactive-hover group relative rounded-xl bg-surface border border-white/60 skeuo-convex skeuo-convex-hover transition-all duration-300 overflow-hidden flex flex-col justify-end p-6 cursor-pointer">
+<div class="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Close-up of a high-end vintage audio receiver interface showing beautifully machined metal knobs and soft glowing analog meters. The lighting is moody but warm, emphasizing the tactile, physical controls. The color palette leans heavily into soft sage greens and warm silver tones, embodying physical craftsmanship." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA_hpcNUHoGHFNL77njPm9NJTmaN36SBIYSQbnZ5vbtmU2Z4JiOXyBcV2FBRdpJsKvgiEsJw61iGu0lmx5S9NRsbTAUCrBMyZwy6DJvAi697NlYpmQt1KatC0E5qvkVInYSgy7c6Dv-WcyVhO729SjONU9H_H_Z1i7xsbCbm7RTvS2cvlP5Otev0UPF9RhKjl6Lt9kZPq4ER8jyV9PR0i1j4eknoEjWpHodTQjBnJmNPvmItt_AA6pEh-muG-GT021vZ_PSBfZ3Iw');">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface/90 via-surface/40 to-transparent"></div>
+<div class="relative z-10">
+<span class="font-label-sm text-label-sm text-primary-container bg-surface/90 backdrop-blur-sm px-3 py-1 rounded-full uppercase tracking-wider inline-block mb-2 border border-white/40">Hardware UI</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Analog Audio</h2>
+</div>
+</article>
+<!-- Project Card 3 -->
+<article class="interactive-hover group relative rounded-xl bg-surface border border-white/60 skeuo-convex skeuo-convex-hover transition-all duration-300 overflow-hidden flex flex-col justify-end p-6 cursor-pointer">
+<div class="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Abstract macro photography of stacked, slightly translucent paper sheets in varying shades of soft pale green and off-white. The lighting creates delicate inner shadows and highlights, mimicking the look of physical, recessed UI layers. The composition is clean, geometric, and highly textural." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB1wpjORUN9zMMLRZcRycr9PWpCHaKmxNP9h92pTsk1PZ3HV2IL6QvL_y9nODUyvg7sHxHHoYxSudiZjRlzbZWeJkrSAzAvdaobVNZcMP1UHeenUFnlezInzwQb9FCe7qtXPlD5FwYhghoTud45fT5MWyjkdEGF7xMA_W5k0CBPWTJSHvMxyW7S4VCoS6Sv9kS-OkMwz-kfdAVZNDqhqWlUOE059lpmBLfhNKu1RIw2xK1nGlJlJgKB1ogZXZOSIFwcFmV-V5KMYQ');">
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface/90 via-surface/40 to-transparent"></div>
+<div class="relative z-10">
+<span class="font-label-sm text-label-sm text-primary-container bg-surface/90 backdrop-blur-sm px-3 py-1 rounded-full uppercase tracking-wider inline-block mb-2 border border-white/40">Design System</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Paper &amp; Glass</h2>
+</div>
+</article>
+<!-- Project Card 4 (Large) -->
+<article class="interactive-hover group relative lg:col-span-2 rounded-xl bg-surface-container-low border border-white/60 skeuo-convex skeuo-convex-hover transition-all duration-300 overflow-hidden flex flex-col justify-end p-6 cursor-pointer">
+<div class="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A tranquil, minimalist workspace featuring a wooden desk, a sleek monitor displaying a soft green geometric interface, and a small potted succulent. The scene is bathed in diffuse, natural light that highlights the matte textures and subtle drop shadows of the physical objects, perfectly aligning with a tactile skeuomorphic aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC2VEH6XyoM4iJvFRhhvwBi-BeV45vLTfBY3oH_dRxcTcZS6R4I4qQ2DtyGPjf02C9Vcx3lpGkUeOmUNgIco_jY7FnwfPZ-39kOPI2Z0k3XL6VNM2ZkRV_tQCWFOf2kOaLOyGuKD9xAf-qSbZ4jxS1Yu09IC9AakSlPMsHaF5xSh8bQniMjpRkCBY9BLKn2zeQnqXYwT1W73xu6OIOCb_xcclX4VbOg14RSgs10-DMU2S8b6b1IpeFFXBXEg3lK-GDZ9PaYKteeDQ');">
+</div>
+<div class="relative z-10 glass-panel rounded-lg p-6 w-full md:w-2/3 lg:w-1/2 ml-auto">
+<span class="font-label-sm text-label-sm text-primary-container bg-surface/80 px-3 py-1 rounded-full uppercase tracking-wider inline-block mb-3 border border-white/40">Web Platform</span>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-2">Workspace Hub</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">A productivity tool designed to feel like a physical extension of your desk.</p>
+</div>
+</article>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-container-lowest w-full py-12 px-margin-mobile md:px-margin-desktop border-t border-outline-variant/30 inner-shadow-sm transition-all relative z-10">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter items-center max-w-container-max mx-auto">
+<!-- Brand & Copyright -->
+<div class="flex flex-col gap-2">
+<span class="font-headline-md text-headline-md text-primary">Digital Craft</span>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                    © 2024 Digital Craftsmanship. Built with intentionality.
+                </p>
+</div>
+<!-- Links -->
+<ul class="flex flex-wrap gap-6 md:justify-end font-body-md text-body-md">
+<li><a class="text-on-surface-variant hover:text-secondary-fixed-dim transition-colors" href="#">Instagram</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary-fixed-dim transition-colors" href="#">LinkedIn</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary-fixed-dim transition-colors" href="#">Dribbble</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary-fixed-dim transition-colors" href="#">Email</a></li>
+</ul>
+</div>
+</footer>
+<!-- Vanilla JS for Cursor tracking -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cursor = document.getElementById('custom-cursor');
+            
+            if(window.matchMedia("(min-width: 768px)").matches) {
+                document.addEventListener('mousemove', (e) => {
+                    cursor.style.left = e.clientX + 'px';
+                    cursor.style.top = e.clientY + 'px';
+                });
+            }
+        });
+    </script>
+</body></html>
